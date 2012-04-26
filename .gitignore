@@ -1,0 +1,4 @@
+# Files for git to ignore
+*.dll		# .NET Binary Files
+*.class		# Java Binary Files
+*~		# Temporary Files
