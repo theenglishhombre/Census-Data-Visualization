@@ -7,13 +7,24 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: ViewData["Message"] %></h2>
     <div>
-
+    
+        <% foreach (var m in ViewData.Model) 
+       { %> 
  
-      
-</div> 
-<div id="bottomLinks">
-<%= Html.ActionLink("Black Or African American", "Black_Or_African_American") %> 
-<%= Html.ActionLink("White", "Black_Or_African_American") %>
-</div>
+        Black: <%= m.Black_Or_African_American %> 
+        <br /> 
+       <%-- Director: <%= m.Director %> 
+        <br /> 
+        <%= Html.ActionLink("Edit", "Edit", new { id = m.Id })%> 
+        <%= Html.ActionLink("Delete", "Delete", new { id = m.Id })%> --%>
+        
+            <hr /> 
+    <% } %> 
+ 
+ 
+  <%--  <%= Html.ActionLink("Add Race", "Add") %> 
+--%>
+    
+    </div>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 </asp:Content>
