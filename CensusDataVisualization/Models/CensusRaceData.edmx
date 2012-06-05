@@ -651,7 +651,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="CensusRaceData">
+      <Diagram Name="CensusRaceData" ZoomLevel="10">
         <EntityTypeShape EntityType="Census2010Model.SF1_00003" Width="1.5" PointX="0.75" PointY="0.75" Height="39.28676432291666" IsExpanded="true" />
       </Diagram>
     </Diagrams>
