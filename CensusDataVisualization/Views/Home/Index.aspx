@@ -1,30 +1,26 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<List<CensusDataVisualization.Models.SF1_00003>>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<CensusDataVisualization.Helpers.PaginatedList<CensusDataVisualization.Models.SF1_00003>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    Home Page
+    Census Data Region Selection
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: ViewData["Message"] %></h2>
+    <h2>Select a Census Region</h2>
+
     <div>
-    
-        <% foreach (var m in ViewData.Model) 
-       { %> 
- 
-        Black: <%= m.Black_Or_African_American %> 
-        <br /> 
-       <%-- Director: <%= m.Director %> 
-        <br /> 
-        <%= Html.ActionLink("Edit", "Edit", new { id = m.Id })%> 
-        <%= Html.ActionLink("Delete", "Delete", new { id = m.Id })%> --%>
+        <ul class="regions">
+            <% foreach (var region in Model) { %>
         
-            <hr /> 
-    <% } %> 
- 
- 
-  <%--  <%= Html.ActionLink("Add Race", "Add") %> 
---%>
-    
+                <li>     
+                    <%: Html.ActionLink(region.LOGRECNO.ToString(), "Region", new { id = region.LOGRECNO })%>
+                    , Total Population
+                    <strong><%: region.White_Alone.ToString()%></strong>
+                </li>
+        
+            <% } %>
+        </ul>
+    </div> 
+
+    <div id="bottomLinks">
     </div>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
 </asp:Content>

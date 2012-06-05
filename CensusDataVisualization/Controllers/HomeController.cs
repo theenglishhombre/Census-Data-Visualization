@@ -4,42 +4,99 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CensusDataVisualization.Models;
+using System.Web.UI.DataVisualization.Charting;
+using System.Drawing;
+using System.IO;
+using System.Web.UI;
+using CensusDataVisualization.Helpers;
+
 
 namespace CensusDataVisualization.Controllers
 {
     [HandleError]
     public class HomeController : Controller
     {
-        Census2010Entities _db;
+        ICensusDataRepository censusDataRepository;
 
-        public HomeController()
+        private Font font = new Font("Trebuchet MS", 14, FontStyle.Bold);
+        private Color color = Color.FromArgb(26, 59, 105);
+
+        #region Constructors
+        public HomeController() : this(new CensusDataRepository())
+        { }
+
+        public HomeController(ICensusDataRepository repository)
         {
-            _db = new Census2010Entities();
-
+            censusDataRepository = repository;
         }
-        
-        public ActionResult Index()
+        #endregion
+
+        public ActionResult Index(int? page)
         {
-            ViewData["Message"] = "Welcome to ASP.NET MVC!";
-            //ViewData.Model = _db.SF1_00003.ToList();
-            
-            //fix this -> learn linq syntax
-            IList<SF1_00003> modelItems = _db.SF1_00003.ToList();
-            List<SF1_00003> model = new List<SF1_00003>();
+            const int pageSize = 25;
 
-            for (int i = 6; i < 21; i++)
-            {
-                model.Add(modelItems[i]);
-            }
+            IQueryable<SF1_00003> regions = censusDataRepository.FindAllRegionsOrderByPopulationDesc();
 
-            ViewData.Model = model;
+            var paginatedRegions = new PaginatedList<SF1_00003>(regions, page ?? 0, pageSize);
 
-            return View();
+            return View(paginatedRegions);
         }
 
         public ActionResult About()
         {
             return View();
+        }
+
+        public ActionResult Region(int? id)
+        {
+            SF1_00003 region = censusDataRepository.GetRegion(id.GetValueOrDefault(1));
+
+            return View(region);
+        }
+
+        public ActionResult ChartView(int? id)
+        {
+            SF1_00003 firstArea = censusDataRepository.GetRegion(id.GetValueOrDefault(1));
+
+            Chart Chart2 = new Chart()
+            {
+                Width = 800,
+                Height = 296,
+                RenderType = RenderType.BinaryStreaming,
+                Palette = ChartColorPalette.BrightPastel,
+                BorderlineDashStyle = ChartDashStyle.Solid,
+                BorderWidth = 2,
+                BorderColor = color
+            };
+
+            Chart2.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+            Chart2.Titles.Add(new Title("Population Race Breakdown", Docking.Top, font, color));
+            Chart2.ChartAreas.Add("Race");
+            Chart2.ChartAreas[0].Area3DStyle.Enable3D = true;
+            Chart2.ChartAreas[0].Area3DStyle.Inclination = 45;
+            Chart2.ChartAreas[0].Area3DStyle.Rotation = 90;
+            Chart2.ChartAreas[0].Area3DStyle.LightStyle = LightStyle.Simplistic;
+            Chart2.Legends.Add("Legend");
+
+            Series pieChartSeries = new Series("Series1");
+            pieChartSeries.ChartType = SeriesChartType.Pie;
+
+            pieChartSeries.Points.AddXY("White", firstArea.P0030002);
+            pieChartSeries.Points.AddXY("African-America", firstArea.Black_Or_African_American);
+            pieChartSeries.Points.AddXY("American Indian", firstArea.P0030004);
+            pieChartSeries.Points.AddXY("Asian", firstArea.P0030005);
+            pieChartSeries.Points.AddXY("Native Hawaiian", firstArea.P0030006);
+            pieChartSeries.Points.AddXY("Other", firstArea.P0030007);
+            pieChartSeries.Points.AddXY("Mixed", firstArea.P0030008);
+
+            Chart2.Series.Add(pieChartSeries);
+
+            // Stream the image to the browser
+            MemoryStream stream = new MemoryStream();
+            Chart2.SaveImage(stream, ChartImageFormat.Png);
+            stream.Seek(0, SeekOrigin.Begin);
+
+            return File(stream.ToArray(), "image/png");
         }
     }
 }
