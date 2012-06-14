@@ -56,7 +56,7 @@ namespace CensusDataVisualization.Controllers
 
         public ActionResult ChartView(int? id)
         {
-            SF1_00003 firstArea = censusDataRepository.GetRegion(id.GetValueOrDefault(1));
+            SF1_00003 regionToDisplay = censusDataRepository.GetRegion(id.GetValueOrDefault(1));
 
             Chart Chart2 = new Chart()
             {
@@ -81,13 +81,13 @@ namespace CensusDataVisualization.Controllers
             Series pieChartSeries = new Series("Series1");
             pieChartSeries.ChartType = SeriesChartType.Pie;
 
-            pieChartSeries.Points.AddXY("White", firstArea.P0030002);
-            pieChartSeries.Points.AddXY("African-America", firstArea.Black_Or_African_American);
-            pieChartSeries.Points.AddXY("American Indian", firstArea.P0030004);
-            pieChartSeries.Points.AddXY("Asian", firstArea.P0030005);
-            pieChartSeries.Points.AddXY("Native Hawaiian", firstArea.P0030006);
-            pieChartSeries.Points.AddXY("Other", firstArea.P0030007);
-            pieChartSeries.Points.AddXY("Mixed", firstArea.P0030008);
+            pieChartSeries.Points.AddXY("White", regionToDisplay.White);
+            pieChartSeries.Points.AddXY("African-America", regionToDisplay.Black_Or_African_American);
+            pieChartSeries.Points.AddXY("American Indian", regionToDisplay.American_Indian);
+            pieChartSeries.Points.AddXY("Asian", regionToDisplay.Asian);
+            pieChartSeries.Points.AddXY("Native Hawaiian", regionToDisplay.Native_Hawaiian);
+            pieChartSeries.Points.AddXY("Other", regionToDisplay.Other);
+            pieChartSeries.Points.AddXY("Mixed", regionToDisplay.Mixed);
 
             Chart2.Series.Add(pieChartSeries);
 

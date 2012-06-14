@@ -252,48 +252,48 @@ namespace CensusDataVisualization.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> White_Alone
+        public Nullable<global::System.Int32> Total
         {
             get
             {
-                return _White_Alone;
+                return _Total;
             }
             set
             {
-                OnWhite_AloneChanging(value);
-                ReportPropertyChanging("White_Alone");
-                _White_Alone = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("White_Alone");
-                OnWhite_AloneChanged();
+                OnTotalChanging(value);
+                ReportPropertyChanging("Total");
+                _Total = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Total");
+                OnTotalChanged();
             }
         }
-        private Nullable<global::System.Int32> _White_Alone;
-        partial void OnWhite_AloneChanging(Nullable<global::System.Int32> value);
-        partial void OnWhite_AloneChanged();
+        private Nullable<global::System.Int32> _Total;
+        partial void OnTotalChanging(Nullable<global::System.Int32> value);
+        partial void OnTotalChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> P0030002
+        public Nullable<global::System.Int32> White
         {
             get
             {
-                return _P0030002;
+                return _White;
             }
             set
             {
-                OnP0030002Changing(value);
-                ReportPropertyChanging("P0030002");
-                _P0030002 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("P0030002");
-                OnP0030002Changed();
+                OnWhiteChanging(value);
+                ReportPropertyChanging("White");
+                _White = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("White");
+                OnWhiteChanged();
             }
         }
-        private Nullable<global::System.Int32> _P0030002;
-        partial void OnP0030002Changing(Nullable<global::System.Int32> value);
-        partial void OnP0030002Changed();
+        private Nullable<global::System.Int32> _White;
+        partial void OnWhiteChanging(Nullable<global::System.Int32> value);
+        partial void OnWhiteChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -324,120 +324,120 @@ namespace CensusDataVisualization.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> P0030004
+        public Nullable<global::System.Int32> American_Indian
         {
             get
             {
-                return _P0030004;
+                return _American_Indian;
             }
             set
             {
-                OnP0030004Changing(value);
-                ReportPropertyChanging("P0030004");
-                _P0030004 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("P0030004");
-                OnP0030004Changed();
+                OnAmerican_IndianChanging(value);
+                ReportPropertyChanging("American_Indian");
+                _American_Indian = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("American_Indian");
+                OnAmerican_IndianChanged();
             }
         }
-        private Nullable<global::System.Int32> _P0030004;
-        partial void OnP0030004Changing(Nullable<global::System.Int32> value);
-        partial void OnP0030004Changed();
+        private Nullable<global::System.Int32> _American_Indian;
+        partial void OnAmerican_IndianChanging(Nullable<global::System.Int32> value);
+        partial void OnAmerican_IndianChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> P0030005
+        public Nullable<global::System.Int32> Asian
         {
             get
             {
-                return _P0030005;
+                return _Asian;
             }
             set
             {
-                OnP0030005Changing(value);
-                ReportPropertyChanging("P0030005");
-                _P0030005 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("P0030005");
-                OnP0030005Changed();
+                OnAsianChanging(value);
+                ReportPropertyChanging("Asian");
+                _Asian = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Asian");
+                OnAsianChanged();
             }
         }
-        private Nullable<global::System.Int32> _P0030005;
-        partial void OnP0030005Changing(Nullable<global::System.Int32> value);
-        partial void OnP0030005Changed();
+        private Nullable<global::System.Int32> _Asian;
+        partial void OnAsianChanging(Nullable<global::System.Int32> value);
+        partial void OnAsianChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> P0030006
+        public Nullable<global::System.Int32> Native_Hawaiian
         {
             get
             {
-                return _P0030006;
+                return _Native_Hawaiian;
             }
             set
             {
-                OnP0030006Changing(value);
-                ReportPropertyChanging("P0030006");
-                _P0030006 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("P0030006");
-                OnP0030006Changed();
+                OnNative_HawaiianChanging(value);
+                ReportPropertyChanging("Native_Hawaiian");
+                _Native_Hawaiian = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Native_Hawaiian");
+                OnNative_HawaiianChanged();
             }
         }
-        private Nullable<global::System.Int32> _P0030006;
-        partial void OnP0030006Changing(Nullable<global::System.Int32> value);
-        partial void OnP0030006Changed();
+        private Nullable<global::System.Int32> _Native_Hawaiian;
+        partial void OnNative_HawaiianChanging(Nullable<global::System.Int32> value);
+        partial void OnNative_HawaiianChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> P0030007
+        public Nullable<global::System.Int32> Other
         {
             get
             {
-                return _P0030007;
+                return _Other;
             }
             set
             {
-                OnP0030007Changing(value);
-                ReportPropertyChanging("P0030007");
-                _P0030007 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("P0030007");
-                OnP0030007Changed();
+                OnOtherChanging(value);
+                ReportPropertyChanging("Other");
+                _Other = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Other");
+                OnOtherChanged();
             }
         }
-        private Nullable<global::System.Int32> _P0030007;
-        partial void OnP0030007Changing(Nullable<global::System.Int32> value);
-        partial void OnP0030007Changed();
+        private Nullable<global::System.Int32> _Other;
+        partial void OnOtherChanging(Nullable<global::System.Int32> value);
+        partial void OnOtherChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> P0030008
+        public Nullable<global::System.Int32> Mixed
         {
             get
             {
-                return _P0030008;
+                return _Mixed;
             }
             set
             {
-                OnP0030008Changing(value);
-                ReportPropertyChanging("P0030008");
-                _P0030008 = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("P0030008");
-                OnP0030008Changed();
+                OnMixedChanging(value);
+                ReportPropertyChanging("Mixed");
+                _Mixed = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Mixed");
+                OnMixedChanged();
             }
         }
-        private Nullable<global::System.Int32> _P0030008;
-        partial void OnP0030008Changing(Nullable<global::System.Int32> value);
-        partial void OnP0030008Changed();
+        private Nullable<global::System.Int32> _Mixed;
+        partial void OnMixedChanging(Nullable<global::System.Int32> value);
+        partial void OnMixedChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

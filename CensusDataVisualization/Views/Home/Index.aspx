@@ -14,7 +14,7 @@
                 <li>     
                     <%: Html.ActionLink(region.LOGRECNO.ToString(), "Region", new { id = region.LOGRECNO })%>
                     , Total Population
-                    <strong><%: region.White_Alone.ToString()%></strong>
+                    <strong><%: region.Total.ToString()%></strong>
                 </li>
         
             <% } %>

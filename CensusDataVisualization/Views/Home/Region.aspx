@@ -4,7 +4,6 @@
 <script type="text/javascript">
 
     $(function () {
-        $("#chart").hide();
         var $dropdown = $("#MainContent_ddlFrequency");
         $dropdown.change(function () {
             var value = $dropdown.val();
@@ -29,16 +28,15 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	PieChart
+	Census Region <%: Model.LOGRECNO %>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Geographic Region</h2>
+    <h2>Census Region <%: Model.LOGRECNO %></h2>
     <form id="form" runat="server">
         <div id="ddlFrequencyDiv" class="topSpace">
             <asp:DropDownList ID="ddlFrequency" runat="server">
-                <asp:ListItem Selected="True" Text="" Value=""></asp:ListItem>
-                <asp:ListItem Text="Show Graph" Value="show"></asp:ListItem>
+                <asp:ListItem Text="Show Graph" Value="show" Selected="True"></asp:ListItem>
                 <asp:ListItem Text="Hide Graph" Value="hide"></asp:ListItem>
             </asp:DropDownList>
         </div>

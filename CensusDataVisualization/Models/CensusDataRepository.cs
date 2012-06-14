@@ -22,7 +22,7 @@ namespace CensusDataVisualization.Models
         public IQueryable<SF1_00003> FindAllRegionsOrderByPopulationDesc()
         {
             return from SF1_00003 in FindAllRegions()
-                   orderby SF1_00003.White_Alone descending
+                   orderby SF1_00003.Total descending
                    select SF1_00003;
         }
 
@@ -36,7 +36,7 @@ namespace CensusDataVisualization.Models
         public IQueryable<SF1_00003> FindAllPopulatedRegionsOrdered()
         {
             return from SF1_00003 in FindAllRegions()
-                   where SF1_00003.White_Alone > 0
+                   where SF1_00003.Total > 0
                    orderby SF1_00003.LOGRECNO
                    select SF1_00003;
         }

@@ -229,14 +229,14 @@
           <Property Name="CHARITER" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="CIFSN" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="LOGRECNO" Type="Int32" Nullable="false" />
-          <Property Name="White_Alone" Type="Int32" />
-          <Property Name="P0030002" Type="Int32" />
+          <Property Name="Total" Type="Int32" />
+          <Property Name="White" Type="Int32" />
           <Property Name="Black_Or_African_American" Type="Int32" />
-          <Property Name="P0030004" Type="Int32" />
-          <Property Name="P0030005" Type="Int32" />
-          <Property Name="P0030006" Type="Int32" />
-          <Property Name="P0030007" Type="Int32" />
-          <Property Name="P0030008" Type="Int32" />
+          <Property Name="American_Indian" Type="Int32" />
+          <Property Name="Asian" Type="Int32" />
+          <Property Name="Native_Hawaiian" Type="Int32" />
+          <Property Name="Other" Type="Int32" />
+          <Property Name="Mixed" Type="Int32" />
           <Property Name="P0040001" Type="Int32" />
           <Property Name="P0040002" Type="Int32" />
           <Property Name="P0040003" Type="Int32" />
@@ -436,14 +436,14 @@
             <ScalarProperty Name="CHARITER" ColumnName="CHARITER" />
             <ScalarProperty Name="CIFSN" ColumnName="CIFSN" />
             <ScalarProperty Name="LOGRECNO" ColumnName="LOGRECNO" />
-            <ScalarProperty Name="White_Alone" ColumnName="P0030001" />
-            <ScalarProperty Name="P0030002" ColumnName="P0030002" />
+            <ScalarProperty Name="Total" ColumnName="P0030001" />
+            <ScalarProperty Name="White" ColumnName="P0030002" />
             <ScalarProperty Name="Black_Or_African_American" ColumnName="P0030003" />
-            <ScalarProperty Name="P0030004" ColumnName="P0030004" />
-            <ScalarProperty Name="P0030005" ColumnName="P0030005" />
-            <ScalarProperty Name="P0030006" ColumnName="P0030006" />
-            <ScalarProperty Name="P0030007" ColumnName="P0030007" />
-            <ScalarProperty Name="P0030008" ColumnName="P0030008" />
+            <ScalarProperty Name="American_Indian" ColumnName="P0030004" />
+            <ScalarProperty Name="Asian" ColumnName="P0030005" />
+            <ScalarProperty Name="Native_Hawaiian" ColumnName="P0030006" />
+            <ScalarProperty Name="Other" ColumnName="P0030007" />
+            <ScalarProperty Name="Mixed" ColumnName="P0030008" />
             <ScalarProperty Name="P0040001" ColumnName="P0040001" />
             <ScalarProperty Name="P0040002" ColumnName="P0040002" />
             <ScalarProperty Name="P0040003" ColumnName="P0040003" />
@@ -651,8 +651,8 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="CensusRaceData" ZoomLevel="10">
-        <EntityTypeShape EntityType="Census2010Model.SF1_00003" Width="1.5" PointX="0.75" PointY="0.75" Height="39.28676432291666" IsExpanded="true" />
+      <Diagram Name="CensusRaceData" ZoomLevel="142">
+        <EntityTypeShape EntityType="Census2010Model.SF1_00003" Width="1.5" PointX="37.625" PointY="9.75" Height="39.28676432291666" IsExpanded="true" />
       </Diagram>
     </Diagrams>
   </Designer>
